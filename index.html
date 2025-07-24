@@ -1,0 +1,454 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html><!--started a project by using html tag-->
+
+<head>
+	<meta charset="UTF-8"><!--Meta tag is used-->
+	<meta name="nstech" content="Home Page of NSTech">
+	<meta name="keywords" content="Landing Page of NSTech">
+	<meta name="author" content="Nirjala Bhetuwal">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NSTech</title> <!-- Name of the website displayed on tab bar-->
+	<link rel="icon" type="image/x-icon" href="image/logo.png">
+	<!-- logo of the website displayed on tab bar of the website-->
+	<link rel="stylesheet" href="/css/printer.css">
+
+
+
+
+</head>
+
+
+
+<body>
+	<div class="topnavbar">
+		<!--set background color and can be changed as per requirements-->
+		<div class="container"><!--used .container(present in external css)class in div tag-->
+
+			<div class="nav">
+				<img src="image/Logo_1.png" class="nslogo"> <!--Logo of NSTech is used on navigation bar-->
+				<ul style>
+					<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+						rel="stylesheet" /><!--used awesome link for fa-fa search icon-->
+					<p style="display: inline-block;margin: 10px;padding-bottom:0;position: relative;bottom:-7px">
+						<!--Inline CSS is used for search navbar-->
+						<input type="text" class="search" placeholder="&#xf002;">
+					</p>
+					<li> <a href="#"><b>HOME</b></a> </li>
+					<!--navbar list is started with li tag and "Home" name also used href attribute for redirection to the desired page-->
+					<li> <a href="./Pages/product.html"><b>PRODUCTS</b></a> </li>
+
+					<li> <a href="./Pages/research.html"><b>RESEARCH</b></a> </li>
+
+					<li> <a href="./Pages/blog.html"><b>BLOG</b></a> </li>
+
+					<li> <a href="./Pages/portfolio.html"><b>ABOUT US</b></a> </li>
+
+				</ul>
+
+			</div>
+		</div>
+		<!--slides show images are started with 3 images-->
+		<div class="sliderContainer"><!--Parent div-->
+			<div class="slideshow-container"><!--Child div-->
+				<div class="mySlides imagefade">
+					<img src="Image/slides_1.jpg">
+					<div class="text1">Inkjet Printer</div><!--used printers name at the bottom of sliding images-->
+				</div>
+				<div class="mySlides imagefade">
+					<img src="Image/slides_2.jpg">
+					<div class="text1">Laser Printer</div>
+				</div>
+				<div class="mySlides imagefade">
+					<img src="Image/Slides_3.jpg" />
+					<div class="text1">Dot Matrix Printer</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div style="text-align:center">
+			<span class="slider-pointer"></span> <!--used .slider-pointer class for the sliding images's dot symbol-->
+			<span class="slider-pointer"></span>
+			<span class="slider-pointer"></span>
+		</div>
+	</div>
+	</div>
+	<script>//started javascript
+		let slideIndex = 0;//make variable name slideIndex
+		showSlides();
+
+		function showSlides() {  //make a function name displaySlides
+			let i;
+			let sliders = document.getElementsByClassName("mySlides");//used get attributes to store the value of myslides in the slides
+			let pointers = document.getElementsByClassName("slider-pointer");
+			for (i = 0; i < sliders.length; i++) {    //using for loop
+				sliders[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > sliders.length) { slideIndex = 1 }    //used conditional if statement
+			for (i = 0; i < pointers.length; i++) {
+				pointers[i].className = pointers[i].className.replace(" active", "");
+			}
+			sliders[slideIndex - 1].style.display = "block";
+			pointers[slideIndex - 1].className += " active";
+			setTimeout(showSlides, 1500); //set slides image time 1.5 seconds
+		}
+	</script> <!--javascript ends-->
+	<div class="row-1">
+		<div class="col-1">
+
+			<div class="blogContainer">
+				<img src="image/background.jpg">
+			</div>
+
+		</div>
+		<div class="col-2"><!--Child Div-->
+			<h1 style="color: black; font-family: 'Times New Roman', Times, serif;font: size 30px;;">Print Brilliance:
+				Your Vision, Our Precision, Every Page Perfection.</h1>
+			<p style="color: black;font-family: 'Times New Roman', Times, serif;font-size: 20px;">Revolutionize your
+				online store's image with our state-of-the-art e-commerce printing.From Documents to Art, Our Printers
+				Deliver Excellence. Trust in Innovation, Trust in Quality. Your Vision, Our Commitment - Where Printing
+				Becomes an Extraordinary Experience.</p>
+			<a href="/Pages/blog.html" class="button1"> Blogs</a>
+		</div>
+	</div>
+
+	<!--Division For Featured Products-->
+
+	<div class="section">
+
+		<h2 style="text-align: center; margin-top:4%;"><a href="/Pages/product.html" class="btn">Highlighted
+				Products</a>
+		</h2>
+
+		<div class="row-2">
+
+			<div class="col-3">
+
+				<div class="product1">
+
+					<img src="image/product11.webp">
+
+				</div>
+
+				<div class="desc">
+					<p>HP LaserJet Pro M1217NFW<br> Fax-Wireless All-In-One<br><b>Rs. 46000 </b>
+						<pr style="color: red; font-family: 'Times New Roman', Times, serif;font-size:20px;"><sub>out of
+								stock</sub></pr>
+					</p>
+				</div>
+
+			</div>
+
+			<div class="col-4">
+
+				<div class="product2">
+
+					<img src="image/product2.jpg">
+
+				</div>
+
+				<div class="desc">
+					<p>EcoTank L1455 A3<br>Wi-Fi Duplex InkTank Printer<br><strike>Rs. 33450</strike>
+						<pr
+							style="color:rgb(240, 80, 80); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+							<br> <b>Rs. 30000</b>
+						</pr> -10.31%
+					</p>
+				</div>
+
+			</div>
+
+			<div class="col-5">
+
+				<div class="product3">
+
+					<img src="image/product10.png">
+
+				</div>
+
+				<div class="desc">
+					<p>Canon MAXIFY GX1070<br><strike>Rs.50000</strike>
+						<pr
+							style="color: rgb(240, 80, 80); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+							<br><b> Rs. 46000 </b>
+						</pr> -8%
+					</p>
+				</div>
+
+			</div>
+
+
+
+			<div class="col-6">
+
+				<div class="product4">
+
+					<img src="image/product1.jpg">
+
+				</div>
+
+				<div class="desc">
+
+					<p>Brother Printer DCP-L2535D <br> 3 in 1 laser printer<strike><br>Rs. 26800</strike>
+						<pr
+							style="color:rgb(240, 80, 80); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+							<br><b>20000 </b>
+						</pr> -25.17%
+					</p>
+
+				</div>
+
+			</div>
+
+
+
+
+
+			<div class="col-7">
+
+				<div class="product5">
+
+					<img src="image/pro.jpg">
+
+				</div>
+
+				<div class="desc">
+					<p>HP LaserJet P1102w <br><strike>Rs. 35000</strike>
+						<pr
+							style="color: rgb(240, 80, 80); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+							<br><b>Rs. 28000 </b>
+						</pr> -20%
+					</p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	</div>
+
+	<!--Division for the featured products ends-->
+	<div class="section">
+
+		<h2 style="text-align: center;"><a href="html/Facility.html" class="btn">Our Facilities</a></h2>
+
+		<div class="row-3">
+
+			<div class="col-8">
+
+				<div class="freedel">
+
+					<img src="image/Facility_freeDel.jpg">
+
+				</div>
+
+				<div class="desc">
+
+					Delivering delight without the extra charge<br>because we believe in happy surprises.
+
+				</div>
+
+			</div>
+
+			<div class="col-9">
+
+				<div class="bestquality">
+
+					<img src="image/Facility_best.jpg">
+
+				</div>
+
+				<div class="desc">
+
+					From the first product to the last, <br> we expect a consistent standard of excellence that defines
+					our brand. </div>
+
+			</div>
+
+			<div class="col-10">
+
+				<div class="getdiscount">
+
+					<img src="image/special.jfif">
+
+				</div>
+
+				<div class="desc">
+
+					Elevate your experience with our products and <br> an exclusive discount, just for you. Your
+					satisfaction, our treat!.
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="section-1">
+
+		<div class="research-home">
+
+			<div class="col-11">
+
+				<a href="#">
+
+					<img src="image/research.jpg" style=" box-shadow:5px 5px 12px 5px rgb(15, 14, 16);width: 75%;"></a>
+
+			</div>
+
+			<div class="col-12">
+
+				<p
+					style="color: black; padding-left: 50; padding-top: 30;padding-right: 50;font-family: 'Times New Roman', Times, serif">
+					Printers have progressed from simple mechanical devices to sophisticated technological marvels
+					throughout the years. Modern printers use a variety of technologies, including inkjet, laser, and 3D
+					printing, to meet specialized needs. Inkjet printers make detailed and colorful prints by using
+					minute droplets of ink, making them perfect for high-quality photo and document printing. Laser
+					printers, on the other hand, use laser beams to create exact images, and they excel at fast and
+					efficient text printing. The introduction of 3D printing has transformed businesses by allowing the
+					manufacture of three-dimensional items layer by layer.</p>
+
+				<a href="/Pages/research.html" class="btn">Research</a><!--Use of Anchor Tag-->
+
+			</div>
+
+		</div>
+
+		<div class="about_us">
+
+			<div class="col-11">
+
+				<a href="#">
+
+					<img src="image/about us.jpg" style="box-shadow:5px 5px 12px 5px rgb(15, 14, 16); width: 75%;"></a>
+
+			</div>
+
+			<div class="col-12">
+
+				<p
+					style="color: black; padding-left: 50; padding-top: 30;padding-right: 50;font-family: 'Times New Roman', Times, serif;">
+					NSTech is developed by the Innovatives; a group of four creative and dynamic individuals. We are
+					motivated by a common love of innovation and a desire to have an important impact on our field of
+					study. The Innovatives are committed to exploring new ideas, pushing boundaries and reflecting
+					uniqueness.
+
+				</p>
+
+				<a href="/Pages/portfolio.html" class="btn">About Us</a> <!--Use of Anchor tag-->
+
+			</div>
+
+		</div>
+
+	</div>
+
+	</div>
+
+	</div>
+
+	<!--Footer begins-->
+	<div class="footer">
+		<div class="row-footer">
+			<div class="footer-col-1">
+				<h3>Download our app</h3>
+				<p>
+					Download our app for android. Available on IOS soon
+				</p>
+				<div class="app-logo">
+					<img src="Image/playstore.png">
+
+
+				</div>
+
+			</div>
+
+			<div class="footer-col-2">
+				<h3>Contact Us</h3>
+				<p>+977 9817282838<br>
+					+977 9843961427<br>
+					NStech@gmail.com
+				</p><br>
+				<p>Our purpose is to sustainably make the pleasure and benefits of printer technologies to many</p>
+			</div>
+			<div class="footer-col-3">
+				<h3> <b>Links</b></h3>
+				<p>Service<br>
+					Support<br>
+					Privacy and Policy<br>
+					Terms and Condition</p>
+			</div>
+			<div class="footer-col-4">
+				<h3><b>Follow Us</b></h3>
+				<p>Facebook<br>
+					Instagram<br>
+					Twitter<br>
+					Tiktok</p>
+			</div>
+		</div>
+		<hr>
+		<div>
+			<table width="25%" style="margin: auto;"> <!--table tag used for social media links-->
+				<tr>
+					<th>
+					<th class="menu">
+
+						<a href="https://www.facebook.com">
+
+							<img src="image/facebook.png" style="height: 40px; width:50px"></a>
+
+					</th>
+					</th>
+					<th>
+
+					<th class="menu">
+
+						<a href="https://instagram.com/">
+
+							<img src="image/ins.png" style="height:40px; width: 50px;"></a>
+
+					</th>
+
+					</th>
+
+					<th>
+
+					<th class="menu">
+
+						<a href="https://www.twitter.com">
+
+							<img src="image/twi.png" style="height:40px" ; width="50px" ;></a>
+
+					</th>
+
+					</th>
+					<th>
+
+					<th class="menu">
+
+						<a href="https://www.tiktok.com">
+
+							<img src="image/tiktok.png" style="height:40px" width="50px"></a>
+
+					</th>
+
+					</th>
+
+				</tr>
+
+			</table> <!--Table tag ends-->
+		</div>
+		<p class="copyright">Copyright 2024 - @NSTech</p>
+	</div>
+	</div>
+	<!--Footer Ends-->
+
+</body>
+
+</html>

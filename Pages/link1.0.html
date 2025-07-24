@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/printer.css">
+  <style>
+    .videoEdit {
+      margin: 0;
+      display: flex;
+
+      justify-content: center;
+      height: 45vh;
+
+    }
+
+    .video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .paragraph {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: x-large;
+      font-style: italic;
+    }
+
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .nav {
+      width: 99%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(236, 233, 233);
+      margin-top: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+
+    }
+
+    .logo {
+      width: 90Px;
+      cursor: pointer;
+      margin-left: 5%;
+      margin-bottom: 0.5%;
+      margin-top: 0.5%;
+      height: 70px;
+    }
+
+    .nav ul li {
+      display: inline-block;
+      margin: 10px;
+      left: 10px;
+      top: 10px;
+      padding-bottom: 10;
+      position: relative;
+      padding: 10px;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: rgb(19, 22, 22);
+    }
+
+    .nav ul li:hover {
+      scale: 1.2;
+    }
+
+    .nav ul li a:hover {
+      color: #935d0c;
+    }
+
+    .topnavbar a {
+      float: left;
+      display: block;
+      color: rgb(169, 167, 167);
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .topnavbar a:hover {
+      background-color: rgb(243, 239, 239);
+      color: black;
+    }
+
+    .topnavbar input[type=text] {
+      float: right;
+      padding: 6px;
+      margin-top: 8px;
+      margin-right: 14px;
+      font-size: 15px;
+    }
+
+
+    /* For the search*/
+    .search {
+      font-family: Arial, FontAwesome;
+      height: 30px;
+      width: 500px;
+      text-align: left;
+      border-width: 2px;
+      bottom: 20%;
+    }
+
+    .text {
+      position: absolute;
+      bottom: 160px;
+      right: 20px;
+      color: floralwhite;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* footer */
+    .footer {
+      background: rgb(226, 224, 224);
+      color: #9f9b9b;
+      font-size: 14px;
+      padding: 60px 0 20px;
+      margin-top: 10px;
+    }
+
+    .footer p {
+      color: #020000;
+    }
+
+    .footer h3 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 20px;
+
+    }
+
+    /*footer css */
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+      min-width: 250px;
+      margin-bottom: 0px;
+    }
+
+    .footer-col-1 {
+      flex-basis: 30%;
+      position: relative;
+      left: 90px;
+
+    }
+
+    .footer-col-2 {
+      flex: 1;
+      text-align: center;
+      bottom: 6%;
+      color: #000;
+
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+    }
+
+    .footer-col-3,
+    .footer-col-4 {
+      flex-basis: 12%;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .app-logo {
+      margin-top: 20px;
+    }
+
+    .app-logo img {
+      width: 140px;
+    }
+
+    .footer hr {
+      border: none;
+      background: #000;
+      height: 1px;
+      margin: 20px 0;
+    }
+
+    .copyright {
+      text-align: center;
+    }
+
+    .images img {
+      display: block;
+      justify-content: center;
+      width: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .images img {
+
+      display: block;
+      justify-content: center;
+      width: 30px;
+    }
+
+    .images img {
+      display: inline-block;
+    }
+
+    /*footer ends*/
+  </style>
+</head>
+
+<body>
+  <div class="topnavbar" style="background-color:#fff">
+    <div class="container">
+
+      <div class="nav">
+        <img src="/Image/Logo_1.png" class="logo">
+
+        <ul style>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" />
+          <p style="display: inline-block;margin: 10px;padding-bottom:0;position: relative;bottom:-7px;"><input
+              type="text" class="search" placeholder="&#xf002;"></p>
+          <li> <a href="/index.html"><b>HOME</b></a> </li>
+          <li> <a href="./product.html"><b>PRODUCTS</b></a> </li>
+
+          <li> <a href="./research.html"><b>RESEARCH</b></a> </li>
+
+          <li> <a href="./blog.html"><b>BLOG</b></a> </li>
+
+          <li> <a href="./portfolio.html"><b>ABOUT US</b></a> </li>
+
+        </ul>
+
+      </div>
+    </div>
+    <figure>
+
+      <div class="videoEdit">
+
+        <video class="video" autoplay loop src="/Image/184489 (Original).mp4" type="mp4">
+        </video>
+      </div>
+      <figcaption>
+        <h1 text-align="center"><b><u>HOW TECHNOLOGY HAS AFFECTED DAILY LIFE AND BUSINESS</u></h1></b>
+      </figcaption>
+
+      <article class="paragraph">The word Technology came from Greek word “techne” which means art and crafts.
+        Before in old days it was used to illustrate art but now in modern time it is used to describe as an advance
+        tool,
+        equipment and gadgets which helps human in daily lives for daily sustaining.From the time when human were
+        evolved, humans are working on making every kinds of equipments
+        and machine which can make there life easy in every aspects and sides. Now in this 21st century technology has
+        been so advance and has tremendous impact on human lifestyles.
+        In every field technology has been progressing in a very high speed. </article>
+      <h1><u>Impact on daily life</u></h1>
+      <article class="paragraph">Technology has become an integral part of our daily lives, remarkably influencing the
+        way we live, work, and connect with others. From the moment we wake up to
+        the sound of our smartphones' alarms to the automated systems that brew our morning coffee, technology shapes
+        our routines. In the workplace, advancements like email, video conferencing, and
+        collaborative platforms have transformed the dynamics of communication and productivity. Social media platforms
+        keep us connected with friends and family, even across vast distances. Smart homes with automated
+        control and security systems add convenience to our domestic lives. The healthcare sector benefits from
+        technological innovations, enhancing diagnostic capabilities and treatment options. In education, online
+        resources
+        and e-learning platforms provide accessible and diverse learning opportunities. Technology has spread through
+        every aspect of our lives, simplifying tasks, enhancing connectivity, and perpetually reshaping our daily
+        experinces.</article>
+
+      <h1><u>Impact on business</u></h1>
+      <article class="paragraph"> Technology has enabled businesses to attain a greater reach. It's easier for companies
+        to do business across the world.
+        Websites and applications like emails, text, instant messaging, have made global communication quicker and more
+        effective than ever which has directly affected the business.
+        Businesses have advanced internal communications quite a bit as well, making it possible for employees at many
+        companies to work from home throughout the pandemic like corona virus .
+        Likewise technology helps to support external customer service efforts as well as help individuals within the
+        organization. There are hundreds of platforms that streamline the workflow but also facilitate the work process.
+        Getting feedback is also easier since communication is also more straightforward.Technology has helped
+        businesses a lot by making things better and smarter.
+        As technology keeps getting fancier, it will keep playing a bigger part in how businesses work.
+
+      </article>
+
+
+
+    </figure>
+    </figure>
+    <div class="footer">
+      <div class="row-footer">
+        <div class="footer-col-1">
+          <h3>Download our app</h3>
+          <p>
+            Download our app for android. Available on IOS soon
+          </p>
+          <div class="app-logo">
+            <img src="/Image/playstore.png">
+
+
+          </div>
+
+        </div>
+
+        <div class="footer-col-2">
+          <h3>Contact Us</h3>
+          <p>+977 9817282838<br>
+            +977 9843961427<br>
+            NStech@gmail.com
+          </p><br>
+          <p>Our purpose is to sustainably make the pleasure and benefits of printer technologies to many</p>
+        </div>
+        <div class="footer-col-3">
+          <h3> <b>Links</b></h3>
+          <p>Service<br>
+            Support<br>
+            Privacy and Policy<br>
+            Terms and Condition</p>
+        </div>
+        <div class="footer-col-4">
+          <h3><b>Follow Us</b></h3>
+          <p>Facebook<br>
+            Instagram<br>
+            Twitter<br>
+            Tiktok</p>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <table width="25%" style="margin: auto;"> <!--table tag used for social media links-->
+          <tr>
+            <th>
+            <th class="menu">
+
+              <a href="https://www.facebook.com">
+
+                <img src="/image/facebook.png" style="height: 40px; width:50px"></a>
+
+            </th>
+            </th>
+            <th>
+
+            <th class="menu">
+
+              <a href="https://instagram.com/">
+
+                <img src="/image/ins.png" style="height:40px; width: 50px;"></a>
+
+            </th>
+
+            </th>
+
+            <th>
+
+            <th class="menu">
+
+              <a href="https://www.twitter.com">
+
+                <img src="/image/twi.png" style="height:40px" ; width="50px" ;></a>
+
+            </th>
+
+            </th>
+            <th>
+
+            <th class="menu">
+
+              <a href="https://www.tiktok.com">
+
+                <img src="/image/tiktok.png" style="height:40px" width="50px"></a>
+
+            </th>
+
+            </th>
+
+          </tr>
+
+        </table> <!--Table tag ends-->
+      </div>
+      <p class="copyright">Copyright 2024 - @NSTech</p>
+    </div>
+  </div>
+  <!--Footer Ends-->
+
+</body>
+
+</html>

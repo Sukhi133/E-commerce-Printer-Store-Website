@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/printer.css">
+  <style>
+    .contents {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0px;
+      flex-direction: wrap;
+    }
+
+    .photo1 {
+      flex: 1;
+      overflow: hidden;
+      margin-right: 30px;
+      margin-left: 30px;
+    }
+
+    .photo1 img {
+      object-fit: cover;
+      object-position: 3cap;
+      height: auto;
+      max-width: 100%;
+      border-radius: 1cm;
+      display: block;
+      transition: 0.3s ease
+    }
+
+    .paragraph {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: x-large;
+      font-style: italic;
+    }
+
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    #blog {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0px;
+      background-color: rgb(255, 251, 235)
+    }
+
+    .blog-heading h3 {
+      font-size: 2.4rem;
+      color: black;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 2.4rem;
+    }
+
+    .blog-heading b {
+      color: rgb(96, 14, 14);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .blog-box-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 50px;
+      max-width: 1050px;
+      width: 90%;
+
+    }
+
+    .blog-box {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      transition: all ease 0.3s;
+      background-color: antiquewhite;
+    }
+
+    .blog-box:hover {
+      box-shadow: 16px 20px 50px rgba(0, 0, 0, 0.12);
+      background-color: aliceblue;
+      height: auto;
+    }
+
+    .blog-box-img {
+      width: 100%;
+      height: 60%;
+      max-width: 500px;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+    }
+
+    .blog-box-img video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all ease 0.3s;
+    }
+
+    .blog-img-link {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      /*background-color: cadetblue;*/
+      color: aqua;
+      box-shadow: 2px 2px 30px rgba(20, 97, 212, 0.12);
+      display: none;
+      animation: fade 0.3s;
+    }
+
+    .blog-box:hover .blog-box-img video {
+      filter: blur(3px);
+    }
+
+    .blog-box:hover .blog-box-img a {
+      display: flex;
+    }
+
+    .blog-box-text {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 10px 20px 10px;
+    }
+
+    .blog-box-text b {
+      color: black;
+      font-size: 1.5rem;
+      font-weight: bold;
+
+    }
+
+    .blog-box-text p {
+      color: rgb(11, 11, 11);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .blog-box-text a {
+      font-size: 1.4rem;
+      color: green;
+      font-weight: 800;
+      line-height: 1.8rem;
+      margin: 5px 0px 10px 0px;
+    }
+
+    .blog-box-text p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .blog-author {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .blog-author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+
+    .blog-author-img video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .blog-author-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-author-text b {
+      color: tomato;
+      font-weight: 800;
+    }
+
+    .blog-author-text span {
+      color: blueviolet;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .nav {
+      width: 99%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(236, 233, 233);
+      margin-top: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+
+    }
+
+    .logo {
+      width: 90Px;
+      cursor: pointer;
+      margin-left: 5%;
+      margin-bottom: 0.5%;
+      margin-top: 0.5%;
+      height: 70px;
+    }
+
+    .nav ul li {
+      display: inline-block;
+      margin: 10px;
+      left: 10px;
+      top: 10px;
+      padding-bottom: 10;
+      position: relative;
+      padding: 10px;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: rgb(19, 22, 22);
+    }
+
+    .nav ul li:hover {
+      scale: 1.2;
+    }
+
+    .nav ul li a:hover {
+      color: #935d0c;
+    }
+
+    .topnavbar {
+      overflow: hidden;
+      background-color: rgb(133, 15, 15);
+    }
+
+    .topnavbar a {
+      float: left;
+      display: block;
+      color: rgb(169, 167, 167);
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .topnavbar a:hover {
+      background-color: rgb(243, 239, 239);
+      color: black;
+    }
+
+    .topnavbar a.active {
+      background-color: brown;
+      color: white;
+    }
+
+    .topnavbar input[type=text] {
+      float: right;
+      padding: 6px;
+      margin-top: 8px;
+      margin-right: 14px;
+      font-size: 15px;
+    }
+
+
+    /* For the search*/
+    .search {
+      font-family: Arial, FontAwesome;
+      height: 30px;
+      width: 500px;
+      text-align: left;
+      border-width: 2px;
+      bottom: 20%;
+    }
+
+    /* footer */
+    .footer {
+      background: rgb(226, 224, 224);
+      color: #9f9b9b;
+      font-size: 14px;
+      padding: 60px 0 20px;
+      margin-top: 10px;
+    }
+
+    .footer p {
+      color: #020000;
+    }
+
+    .footer h3 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 20px;
+
+    }
+
+    /*footer css */
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+      min-width: 250px;
+      margin-bottom: 0px;
+    }
+
+    .footer-col-1 {
+      flex-basis: 30%;
+      position: relative;
+      left: 90px;
+
+    }
+
+    .footer-col-2 {
+      flex: 1;
+      text-align: center;
+      bottom: 6%;
+      color: #000;
+
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+    }
+
+    .footer-col-3,
+    .footer-col-4 {
+      flex-basis: 12%;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .app-logo {
+      margin-top: 20px;
+    }
+
+    .app-logo img {
+      width: 140px;
+    }
+
+    .footer hr {
+      border: none;
+      background: #000;
+      height: 1px;
+      margin: 20px 0;
+    }
+
+    .copyright {
+      text-align: center;
+    }
+
+    .images img {
+      display: block;
+      justify-content: center;
+      width: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .images img {
+
+      display: block;
+      justify-content: center;
+      width: 30px;
+    }
+
+    .images img {
+      display: inline-block;
+    }
+
+    /*footer ends*/
+  </style>
+</head>
+
+<body>
+  <div class="topnavbar" style="background-color:#fff">
+    <div class="container">
+      <div class="nav">
+        <img src="/Image/Logo_1.png" class="logo">
+        <ul style>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" />
+          <p style="display: inline-block;margin: 10px;padding-bottom:0;position: relative;bottom:-7px;"><input
+              type="text" class="search" placeholder="&#xf002;"></p>
+          <li> <a href="/index.html"><b>HOME</b></a> </li>
+          <li> <a href="./product.html"><b>PRODUCTS</b></a> </li>
+
+          <li> <a href="./research.html"><b>RESEARCH</b></a> </li>
+
+          <li> <a href="./blog.html"><b>BLOG</b></a> </li>
+
+          <li> <a href="./portfolio.html"><b>ABOUT US</b></a> </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <figure>
+    <div class="contents">
+      <div class="photo1">
+        <div class="photo1-img">
+          <img src="/image/mercedes-1613219.jpg" alt="">
+
+        </div>
+
+      </div>
+
+      <div class="photo1">
+        <div class="photo1-img">
+          <img src="/image/printer-790396_1280.jpg" alt="">
+
+        </div>
+      </div>
+    </div>
+    <figcaption>
+      <h1 align="center"><u>Invention of printer along with development of technology</u></h1>
+    </figcaption>
+    <p class="paragraph">Can you believe it ? People were doing something like printing way back in 3500 BC. The
+      Persians and Mesopotamian used special stamps clay to make the official documents.
+      After that they started carving words on woods to print the things. They got even smarter with the movable
+      type,the printing press was born.
+      Ever since we started putting words on thing, we've been figuring out ways to make more and more copies of them.
+    </p>
+    <p class="paragraph">The invention of printers consider as a vital moment in the history of technology as it
+      revolutionized the way information is now disseminated and is transforming the landscape of communication.
+      Johannes Gutenberg, the father of printer started the journey of invention of the mechanical movable-type printing
+      press around 1440 AD. The huge production of books and knowledge on an unprecedented scale, considerably
+      contributing to the Renaissance and the spread of ideas was enabled by this revolutionary innovation.
+    </p>
+    <p class="paragraph">Printers evolved from the traditional mechanical presses to more sophisticated and efficient
+      devices, as technology advanced over the centuries.The advent of electronic printers in the latter half of the
+      20th
+      century marked a new era in printing technology. The printers like laser and inkjet was introduced to bring
+      improvements in speed, quality, and versatility, making printing more accessible to individuals and businesses
+      alike.
+      This development played a crucial role in the democratization of information, allowing for the widespread creation
+      of documents, images, and other printed materials.
+    </p>
+    <p class="paragraph">In the 21st century, printers continue to evolve with the integration of smart and connected
+      technologies. Cloud printing, mobile printing, and wireless capabilities have made printing more convenient and
+      flexible.
+      Likewise, environmental concerns have driven the development of eco-friendly printing technologies, reducing waste
+      and energy consumption.</p>
+    <p class="paragraph">n conclusion, the invention and development of printers have played a crucial role in shaping
+      the way information is produced and disseminated. From Gutenberg's mechanical press to the sophisticated digital
+      printers of today,
+      the journey of printers reflects the continuous march of technology, making printing more accessible, efficient,
+      and versatile, and contributing to the ever-changing landscape of communication and information sharing.</p>
+
+  </figure>
+  <div class="footer">
+    <div class="row-footer">
+      <div class="footer-col-1">
+        <h3>Download our app</h3>
+        <p>
+          Download our app for android. Available on IOS soon
+        </p>
+        <div class="app-logo">
+          <img src="/Image/playstore.png">
+
+
+        </div>
+
+      </div>
+
+      <div class="footer-col-2">
+        <h3>Contact Us</h3>
+        <p>+977 9817282838<br>
+          +977 9843961427<br>
+          NStech@gmail.com
+        </p><br>
+        <p>Our purpose is to sustainably make the pleasure and benefits of printer technologies to many</p>
+      </div>
+      <div class="footer-col-3">
+        <h3> <b>Links</b></h3>
+        <p>Service<br>
+          Support<br>
+          Privacy and Policy<br>
+          Terms and Condition</p>
+      </div>
+      <div class="footer-col-4">
+        <h3><b>Follow Us</b></h3>
+        <p>Facebook<br>
+          Instagram<br>
+          Twitter<br>
+          Tiktok</p>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <table width="25%" style="margin: auto;"> <!--table tag used for social media links-->
+        <tr>
+          <th>
+          <th class="menu">
+
+            <a href="https://www.facebook.com">
+
+              <img src="/image/facebook.png" style="height: 40px; width:50px"></a>
+
+          </th>
+          </th>
+          <th>
+
+          <th class="menu">
+
+            <a href="https://instagram.com/">
+
+              <img src="/image/ins.png" style="height:40px; width: 50px;"></a>
+
+          </th>
+
+          </th>
+
+          <th>
+
+          <th class="menu">
+
+            <a href="https://www.twitter.com">
+
+              <img src="/image/twi.png" style="height:40px" ; width="50px" ;></a>
+
+          </th>
+
+          </th>
+          <th>
+
+          <th class="menu">
+
+            <a href="https://www.tiktok.com">
+
+              <img src="/image/tiktok.png" style="height:40px" width="50px"></a>
+
+          </th>
+
+          </th>
+
+        </tr>
+
+      </table> <!--Table tag ends-->
+    </div>
+    <p class="copyright">Copyright 2024 - @NSTech</p>
+  </div>
+  </div>
+  <!--Footer Ends-->
+</body>
+
+</html>

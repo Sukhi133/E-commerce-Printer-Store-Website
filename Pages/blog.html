@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+
+  <link rel="stylesheet" href="/css/printer.css">
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    #blog {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0px;
+      background-color: rgb(255, 251, 235)
+    }
+
+    .blog-heading h3 {
+      font-size: 2.4rem;
+      color: black;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 2.4rem;
+    }
+
+
+    .blog-box-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 50px;
+      max-width: 1050px;
+      width: 90%;
+
+    }
+
+    .blog-box {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      transition: all ease 0.3s;
+      background-color: antiquewhite;
+    }
+
+    .blog-box:hover {
+      box-shadow: 16px 20px 50px rgba(0, 0, 0, 0.12);
+      background-color: aliceblue;
+      height: auto;
+    }
+
+    .blog-box-img {
+      width: 100%;
+      height: 60%;
+      max-width: 500px;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+    }
+
+    .blog-box-img video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all ease 0.3s;
+    }
+
+    .blog-box:hover .blog-box-img video {
+      filter: blur(3px);
+    }
+
+    .blog-box:hover .blog-box-img a {
+      display: flex;
+    }
+
+    .blog-box-text {
+      display: flex;
+      flex-direction: column;
+      padding: 30px 10px 20px 10px;
+    }
+
+    .blog-box-text b {
+      color: black;
+      font-size: 1.5rem;
+      font-weight: bold;
+
+    }
+
+    .blog-box-text p {
+      color: rgb(11, 11, 11);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .blog-box-text a {
+      font-size: 1.4rem;
+      color: green;
+      font-weight: 800;
+      line-height: 1.8rem;
+      margin: 5px 0px 10px 0px;
+    }
+
+    .blog-box-text p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+
+    .nav {
+      width: 99%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(236, 233, 233);
+      margin-top: 8px;
+      margin-left: 8px;
+      margin-right: 8px;
+
+    }
+
+    .logo {
+      width: 90Px;
+      cursor: pointer;
+      margin-left: 5%;
+      margin-bottom: 0.5%;
+      margin-top: 0.5%;
+      height: 70px;
+    }
+
+    .nav ul li {
+      display: inline-block;
+      margin: 10px;
+      left: 10px;
+      top: 10px;
+      padding-bottom: 10;
+      position: relative;
+      padding: 10px;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: rgb(19, 22, 22);
+    }
+
+    .nav ul li:hover {
+      scale: 1.2;
+    }
+
+    .nav ul li a:hover {
+      color: #935d0c;
+    }
+
+    .topnavbar {
+      overflow: hidden;
+      background-color: rgb(133, 15, 15);
+    }
+
+    .topnavbar a {
+      float: left;
+      display: block;
+      color: rgb(169, 167, 167);
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .topnavbar a:hover {
+      background-color: rgb(243, 239, 239);
+      color: black;
+    }
+
+    .topnavbar a.active {
+      background-color: brown;
+      color: white;
+    }
+
+    .topnavbar input[type=text] {
+      float: right;
+      padding: 6px;
+      margin-top: 8px;
+      margin-right: 14px;
+      font-size: 15px;
+    }
+
+
+    /* For the search*/
+    .search {
+      font-family: Arial, FontAwesome;
+      height: 30px;
+      width: 500px;
+      text-align: left;
+      border-width: 2px;
+      bottom: 20%;
+    }
+
+    /* footer */
+    .footer {
+      background: rgb(226, 224, 224);
+      color: #9f9b9b;
+      font-size: 14px;
+      padding: 60px 0 20px;
+    }
+
+    .footer p {
+      color: #020000;
+    }
+
+    .footer h3 {
+      color: rgb(0, 0, 0);
+      margin-bottom: 20px;
+
+    }
+
+    /*footer css */
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+      min-width: 250px;
+      margin-bottom: 0px;
+    }
+
+    .footer-col-1 {
+      flex-basis: 30%;
+      position: relative;
+      left: 90px;
+
+    }
+
+    .footer-col-2 {
+      flex: 1;
+      text-align: center;
+      bottom: 6%;
+      color: #000;
+
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+    }
+
+    .footer-col-3,
+    .footer-col-4 {
+      flex-basis: 12%;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .app-logo {
+      margin-top: 20px;
+    }
+
+    .app-logo img {
+      width: 140px;
+    }
+
+    .footer hr {
+      border: none;
+      background: #000;
+      height: 1px;
+      margin: 20px 0;
+    }
+
+    .copyright {
+      text-align: center;
+    }
+
+    .images img {
+      display: block;
+      justify-content: center;
+      width: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .images img {
+
+      display: block;
+      justify-content: center;
+      width: 30px;
+    }
+
+    .images img {
+      display: inline-block;
+    }
+
+    /*footer ends*/
+  </style>
+</head>
+
+<body>
+  <div class="topnavbar" style="background-color:#fff">
+    <div class="container">
+
+      <div class="nav">
+        <img src="/Image/Logo_1.png" class="logo">
+
+        <ul style>
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" />
+          <p style="display: inline-block;margin: 10px;padding-bottom:0;position: relative;bottom:-7px;"><input
+              type="text" class="search" placeholder="&#xf002;"></p>
+          <li> <a href="/index.html"><b>HOME</b></a> </li>
+          <li> <a href="./product.html"><b>PRODUCTS</b></a> </li>
+
+          <li> <a href="./research.html"><b>RESEARCH</b></a> </li>
+
+          <li> <a href="#"><b>BLOG</b></a> </li>
+
+          <li> <a href="./portfolio.html"><b>ABOUT US</b></a> </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <section id="blog">
+    <div class="blog-heading">
+
+      <h3>Blog</h3>
+    </div>
+
+    <div class="blog-box-container">
+
+      <!-- #region -->
+
+      <div class="blog-box">
+
+        <div class="blog-box-img">
+
+          <video class="video" autoplay loop src="/Image/184489 (Original).mp4" type="mp4">
+
+            <a href="#" class="blog-img-link">
+
+            </a>
+
+        </div>
+
+        <div class="blog-box-text">
+          <a href="#">
+            <h2><b>Technology affected daily life and business</b></h2>
+
+            <p>The word Technology came from Greek word “techne” which means art and crafts.
+              Before in old days it was used to illustrate art but now in modern time it is used to describe as an
+              advance tool,
+              equipment and gadgets which helps human in daily lives for daily sustaining.</p>
+            <a href="link1.0.html"> Read More</a>
+            <div class="blog-author">
+              <span align="center">Jan 7, 2024</span>
+
+            </div>
+
+          </a>
+        </div>
+      </div>
+
+
+      <!-- #region -->
+
+      <div class="blog-box">
+
+        <div class="blog-box-img">
+
+          <video class="video" autoplay loop src="/Image/printing_device_-_34594 (720p).mp4" type="mp4">
+
+            <a href="#" class="blog-img-link">
+
+            </a>
+
+        </div>
+
+        <div class="blog-box-text">
+
+          <a href="#">
+            <h1><b>Invention of printer</b></h1>
+
+            <p>Can you believe it ? People were doing something like printing way back in 3500 BC. The Persians and
+              Mesopotamian used special stamps clay to make the official documents.After that they started carving words
+              on woods to print the things.
+              They got even smarter with the movable type, and the printing press was born.Ever since we started putting
+              words on thing, we've been figuring out ways to make more and more copies of them.
+            </p>
+            <a href="link2.html"> Read More</a>
+
+            <div class="blog-author">
+              <span>Jan 7, 2024</span>
+
+            </div>
+
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <div class="footer">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3>Download our app</h3>
+        <p>
+          Download our app for android. Available on IOS soon
+        </p>
+        <div class="app-logo">
+          <img src="/image/playstore.png">
+
+
+        </div>
+
+      </div>
+
+      <div class="footer-col-2">
+        <h3>Contact Us</h3>
+        <p>+977 9817282838<br>
+          +977 9843961427<br>
+          NStech@gmail.com
+        </p><br>
+        <p>Our purpose is to sustainably make the pleasure and benefits of printer technologies to many</p>
+      </div>
+      <div class="footer-col-3">
+        <h3> <b>Links</b></h3>
+        <p>Service<br>
+          Support<br>
+          Privacy and Policy<br>
+          Terms and Condition</p>
+      </div>
+      <div class="footer-col-4">
+        <h3><b>Follow Us</b></h3>
+        <p>Facebook<br>
+          Instagram<br>
+          Twitter<br>
+          Tiktok</p>
+      </div>
+    </div>
+    <hr>
+    <div>
+      <table width="25%" style="margin: auto;">
+        <tr>
+          <th>
+          <th class="menu">
+
+            <a href="https://www.facebook.com">
+
+              <img src="/image/facebook.png" style="height: 40px; width:50px"></a>
+
+          </th>
+          </th>
+          <th>
+
+          <th class="menu">
+
+            <a href="https://instagram.com/">
+
+              <img src="/Image/ins.png" style="height:40px; width: 50px;"></a>
+
+          </th>
+
+          </th>
+
+          <th>
+
+          <th class="menu">
+
+            <a href="https://www.twitter.com">
+
+              <img src="/Image/twi.png" style="height:40px" ; width="50px" ;></a>
+
+          </th>
+
+          </th>
+          <th>
+
+          <th class="menu">
+
+            <a href="https://www.tiktok.com">
+
+              <img src="/Image/tiktok.png" style="height:40px" width="50px"></a>
+
+          </th>
+
+          </th>
+
+        </tr>
+
+      </table>
+    </div>
+    <p class="copyright">Copyright 2024 - @NSTech</p>
+  </div>
+
+  <!--Footer Ends-->
+
+</body>
+
+</html>
